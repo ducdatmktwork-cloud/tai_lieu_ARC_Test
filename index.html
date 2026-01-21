@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC Alpha: Bản Đồ Chiến Lược 2026</title>
+    <title>ARC Alpha: Đại Sóng Đầu Tư 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,8 +12,8 @@
         body { font-family: 'Inter', sans-serif; background-color: #020202; color: #e5e5e5; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         
-        /* Background Parallax Effect */
-        .bg-vĩ-mô {
+        /* Background Parallax */
+        .bg-main {
             background: linear-gradient(to bottom, rgba(2, 2, 2, 0.85), rgba(2, 2, 2, 0.98)), 
                         url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1920');
             background-attachment: fixed;
@@ -21,25 +21,25 @@
             background-position: center;
         }
 
-        /* Logo ARC Ring */
+        /* Logo Ring Animation */
         .logo-ring {
             position: relative;
             background: linear-gradient(180deg, #fbbf24 0%, #78350f 100%);
             padding: 4px;
             border-radius: 9999px;
-            box-shadow: 0 0 50px rgba(251, 191, 36, 0.3);
+            box-shadow: 0 0 50px rgba(251, 191, 36, 0.2);
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .logo-ring:hover { transform: scale(1.08) rotate(3deg); box-shadow: 0 0 70px rgba(251, 191, 36, 0.6); }
+        .logo-ring:hover { transform: scale(1.05) rotate(5deg); box-shadow: 0 0 70px rgba(251, 191, 36, 0.5); }
 
-        /* Interactive Glow Card */
+        /* Interactive Glow Cards */
         .interactive-glow {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             background: rgba(15, 15, 15, 0.6);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
         .interactive-glow:hover {
             border-color: rgba(251, 191, 36, 0.5);
@@ -47,7 +47,6 @@
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
         }
-        
         .interactive-glow:active { transform: scale(0.97); transition: all 0.1s ease; }
 
         /* Ripple Effect */
@@ -67,7 +66,6 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
         }
         .btn-premium::before {
             content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
@@ -82,10 +80,13 @@
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .animate-marquee { display: inline-block; animation: marquee 25s linear infinite; }
 
-        .sparkline path { stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 2.5s forwards ease-in-out; }
-        @keyframes draw { to { stroke-dashoffset: 0; } }
+        /* Section Headings */
+        .section-title { position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 60%; height: 3px;
+            background: #fbbf24; border-radius: 2px;
+        }
 
-        /* Image Label Overlay */
         .img-label {
             position: absolute;
             top: 1rem;
@@ -103,212 +104,131 @@
         }
     </style>
 </head>
-<body class="overflow-x-hidden bg-vĩ-mô">
+<body class="overflow-x-hidden bg-main">
 
     <!-- Ticker Bar -->
     <div class="fixed top-0 w-full bg-amber-500 text-black py-2 z-[70] overflow-hidden whitespace-nowrap border-b border-black/10 font-bold shadow-lg">
         <div class="animate-marquee mono text-[11px] uppercase tracking-widest">
-            • BTC: DIGITAL GOLD STATUS • ALTCOINS: LIQUIDITY DRAIN RISK • APRIL 2026: BEIJING SUMMIT PIVOT • USD: DE-DOLLARIZATION ACCELERATING • RESOURCE SUPREMACY: OIL, SILVER, LITHIUM •
+            • GOLD: MACRO ANCHOR • SILVER: INDUSTRIAL ENGINE • BTC: LIQUIDITY BAROMETER • APRIL 2026: BEIJING SUMMIT • AI BUBBLE RISKS • RESOURCE WARS •
         </div>
     </div>
 
     <!-- Hero Section -->
     <header class="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20">
-        <div class="w-full max-w-2xl text-center reveal">
+        <div class="w-full max-w-3xl text-center reveal">
             <!-- LOGO ARC -->
             <div class="flex justify-center mb-10">
-                <div class="logo-ring w-40 h-40 md:w-48 md:h-48 flex items-center justify-center overflow-hidden bg-black">
+                <div class="logo-ring w-36 h-36 md:w-44 md:h-44 flex items-center justify-center overflow-hidden bg-black">
                     <img src="logo_arc.jpg" alt="Logo ARC" class="w-full h-full object-cover rounded-full" onerror="this.src='https://ui-avatars.com/api/?name=ARC&background=fbbf24&color=000&size=512'">
                 </div>
             </div>
 
             <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 border border-amber-500/40 rounded-full bg-amber-500/10 text-amber-500 text-[11px] font-extrabold mono uppercase tracking-[0.3em]">
                 <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-                BÁO CÁO ALPHA ĐỘC QUYỀN 2026
+                PHÂN TÍCH CHIẾN LƯỢC 2026
             </div>
             
-            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter uppercase">
-                BÀN CỜ <br><span class="text-amber-500">ĐỊA CHÍNH TRỊ</span> <br>DÒNG TIỀN 2026
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-[0.95] tracking-tighter uppercase">
+                BẢN ĐỒ <br><span class="text-amber-500">ĐẠI SÓNG</span> 2026
             </h1>
             
-            <p class="text-gray-300 text-base md:text-xl mb-12 leading-relaxed max-w-xl mx-auto font-medium italic">
-                "Giải mã gốc rễ quyền lực tài chính trước cú xoay trục tháng 4/2026."
+            <p class="text-gray-300 text-base md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto font-medium italic">
+                "Thị trường bắt đầu tách rời. Vàng, Bạc và Bitcoin không còn đi chung một hướng. Bạn đã hiểu đúng vai trò thật của chúng?"
             </p>
             
             <div class="flex flex-col gap-4 items-center">
                 <a href="#register" class="btn-premium w-full max-w-sm py-6 text-black font-black rounded-2xl uppercase tracking-[0.2em] text-sm shadow-2xl transition-all">
-                    TRUY CẬP DỮ LIỆU NỘI BỘ
+                    NHẬN CHIẾN LƯỢC ALPHA
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Market Analytics -->
-    <section class="py-20 px-4 reveal">
-        <div class="max-w-xl mx-auto">
-            <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.5em] mb-10 text-center italic">Biến động thị trường 2026</h2>
-            <div class="grid grid-cols-2 gap-5">
-                <!-- Altcoin Drain -->
-                <div class="p-8 bg-black/50 rounded-[32px] border border-white/5 text-center interactive-glow cursor-pointer" onclick="createRipple(event)">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-[10px] mono text-red-500 font-bold uppercase">Liquidity Drain</span>
-                        <svg class="sparkline w-16 h-8" viewBox="0 0 100 40">
-                            <path d="M0,10 L15,35 L30,20 L50,38 L75,25 L100,40" fill="none" stroke="#ef4444" stroke-width="3"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-4xl font-black text-red-500 tracking-tighter" data-target="30">-0%</h4>
-                    <p class="text-[9px] text-gray-500 mt-3 font-bold uppercase tracking-widest italic">Rút máu Altcoin</p>
-                </div>
-                <!-- BTC Gold -->
-                <div class="p-8 bg-black/50 rounded-[32px] border border-white/5 text-center interactive-glow cursor-pointer" onclick="createRipple(event)">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-[10px] mono text-amber-500 font-bold uppercase">Safe Haven</span>
-                        <svg class="sparkline w-16 h-8" viewBox="0 0 100 40">
-                            <path d="M0,35 L20,15 L45,25 L65,5 L85,15 L100,2" fill="none" stroke="#fbbf24" stroke-width="3"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-4xl font-black text-amber-500 tracking-tighter uppercase italic">GOLD</h4>
-                    <p class="text-[9px] text-gray-400 mt-3 font-bold uppercase tracking-widest italic">Vị thế Bitcoin</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Deep Dive: Detailed Explanations -->
-    <section class="py-32 px-4 bg-black/40 backdrop-blur-md reveal">
-        <div class="max-w-3xl mx-auto">
-            <div class="flex items-center gap-4 mb-20 text-center flex-col">
-                <h2 class="text-4xl font-black italic uppercase tracking-tighter text-center">Bóc Tách Thế Trận Vĩ Mô</h2>
-                <div class="w-24 h-1 bg-amber-500 rounded-full"></div>
-            </div>
-            
-            <div class="space-y-32">
-                <!-- Vấn đề 1: Trục Mỹ - Trung -->
-                <article class="group">
-                    <div class="relative rounded-[40px] overflow-hidden border border-white/10 mb-10 interactive-glow shadow-2xl bg-zinc-900">
-                        <span class="img-label">Meeting: Beijing 2026</span>
-                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=1200" alt="Bản đồ địa chính trị Mỹ Trung" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-8 left-8 flex items-center gap-4">
-                            <div class="p-4 bg-amber-500 rounded-3xl text-black shadow-lg">
-                                <i data-lucide="globe-2" size="28"></i>
-                            </div>
-                            <h3 class="text-3xl font-black uppercase tracking-widest text-white italic">Trục Mỹ - Trung</h3>
-                        </div>
-                    </div>
-                    <div class="px-6 border-l-2 border-amber-500/20">
-                        <h4 class="text-amber-500 font-black uppercase text-sm mb-6 tracking-widest italic underline underline-offset-8">Phân tích cốt lõi:</h4>
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-medium">
-                            Năm 2026 đánh dấu cuộc đấu trực diện về **hệ thống thanh toán toàn cầu**. Mỹ nỗ lực duy trì vị thế đồng USD thông qua các lệnh trừng phạt và siết chặt tài nguyên. Ngược lại, Trung Quốc đang đẩy mạnh quá trình **phi USD hóa (De-dollarization)** bằng cách tích lũy Vàng kỷ lục và xây dựng hệ thống thanh toán riêng. Hội nghị tháng 4/2026 tại Bắc Kinh sẽ là "ngã rẽ" quyết định dòng tiền sẽ chảy vào các tài sản trú ẩn hay tiếp tục duy trì trong hệ thống tài chính truyền thống.
-                        </p>
-                        <div class="p-6 bg-amber-500/5 border border-amber-500/20 rounded-3xl italic text-sm text-gray-400">
-                            "Mọi sự kiện từ lãi suất đến lạm phát hiện tại đều chỉ là 'phần nổi', gốc rễ chính là sự thay đổi cực quyền lực giữa hai khối kinh tế lớn nhất."
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Vấn đề 2: Xung đột tài nguyên -->
-                <article class="group">
-                    <div class="relative rounded-[40px] overflow-hidden border border-white/10 mb-10 interactive-glow shadow-2xl bg-zinc-900">
-                        <span class="img-label">Resource War: Lithium & Oil</span>
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1200" alt="Khai thác Lithium Nam Mỹ" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-8 left-8 flex items-center gap-4">
-                            <div class="p-4 bg-blue-500 rounded-3xl text-white shadow-lg">
-                                <i data-lucide="zap" size="28"></i>
-                            </div>
-                            <h3 class="text-3xl font-black uppercase tracking-widest text-white italic">Vũ khí Tài nguyên</h3>
-                        </div>
-                    </div>
-                    <div class="px-6 border-l-2 border-blue-500/20">
-                        <h4 class="text-blue-400 font-black uppercase text-sm mb-6 tracking-widest italic underline underline-offset-8">Chiến lược Nam Mỹ & Trung Đông:</h4>
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-medium">
-                            Tài nguyên đã trở thành vũ khí chiến lược mới. Mỹ đang siết chặt ảnh hưởng tại **Venezuela, Bolivia và Chile** nhằm kiểm soát nguồn cung **Lithium và Bạc** - linh hồn của kỷ nguyên AI và năng lượng tái tạo. Trong khi đó, sự bất ổn mới tại Trung Đông đe dọa trực tiếp đến 50% lượng dầu nhập khẩu của Trung Quốc. Cuộc chiến này tạo ra sự khan hiếm nguồn cung thật, trực tiếp dẫn dắt các biểu đồ hàng hóa và năng lượng toàn cầu.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-5 bg-zinc-900/80 rounded-3xl border border-white/5 text-center group-hover:border-blue-500/30 transition-all">
-                                <span class="text-[10px] text-gray-500 uppercase font-extrabold">Dầu & Lithium</span>
-                                <p class="text-blue-400 font-black text-sm uppercase mt-1 tracking-tighter">Kiểm soát cung</p>
-                            </div>
-                            <div class="p-5 bg-zinc-900/80 rounded-3xl border border-white/5 text-center group-hover:border-blue-500/30 transition-all">
-                                <span class="text-[10px] text-gray-500 uppercase font-extrabold">Silver Demand</span>
-                                <p class="text-white font-black text-sm uppercase mt-1 tracking-tighter">AI Industrial</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Vấn đề 3: Nội bộ Mỹ -->
-                <article class="group">
-                    <div class="relative rounded-[40px] overflow-hidden border border-white/10 mb-10 interactive-glow shadow-2xl bg-zinc-900">
-                        <span class="img-label">Risk Alert: US Debt & AI Bubble</span>
-                        <img src="https://images.unsplash.com/photo-1611974710178-574979603584?auto=format&fit=crop&q=80&w=1200" alt="Thị trường tài chính Mỹ" class="w-full h-80 object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-8 left-8 flex items-center gap-4">
-                            <div class="p-4 bg-red-500 rounded-3xl text-white shadow-lg">
-                                <i data-lucide="shield-alert" size="28"></i>
-                            </div>
-                            <h3 class="text-3xl font-black uppercase tracking-widest text-white italic">Rủi ro Nội bộ Mỹ</h3>
-                        </div>
-                    </div>
-                    <div class="px-6 border-l-2 border-red-500/20">
-                        <h4 class="text-red-500 font-black uppercase text-sm mb-6 tracking-widest italic underline underline-offset-8">Áp lực từ nền kinh tế số 1:</h4>
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-medium">
-                            Nợ công Mỹ đạt mức kỷ lục cùng sự phân cực xã hội sâu sắc đang tạo áp lực trực tiếp lên niềm tin vào đồng USD. Đặc biệt, **Bong bóng AI** đang phình to khi vốn đổ vào hạ tầng quá nhanh nhưng doanh thu thực tế chưa tương xứng. Khi đòn bẩy tài chính hóa trên thị trường hàng hóa (như Bạc) mất kiểm soát, chỉ cần một cú sốc nhỏ từ chính trị cũng có thể đẩy cả hệ thống vào trạng thái rung lắc khốc liệt.
-                        </p>
-                        <div class="p-6 bg-red-500/10 border border-red-500/30 rounded-3xl text-center italic text-gray-400 text-sm">
-                            "Đây là lý do tại sao dòng tiền tổ chức đang âm thầm dịch chuyển sang các tài sản trú ẩn phi chính phủ."
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Asset Class Deep Analysis -->
-    <section class="py-32 px-4 reveal bg-black">
+    <!-- Context: Hoang mang đầu 2026 -->
+    <section class="py-24 px-4 reveal bg-black/40">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-black mb-20 text-center italic uppercase tracking-tighter">Định vị tài sản 2026</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black italic uppercase text-amber-500 section-title">Bối cảnh đầu năm 2026</h2>
+                <p class="text-gray-400 text-sm mt-4 leading-relaxed max-w-2xl mx-auto">
+                    Vàng lập đỉnh lịch sử, Bạc bùng nổ vượt kỳ vọng, trong khi Bitcoin lại giảm đều suốt tháng 12. Tại sao lại có sự tách rời kỳ lạ này?
+                </p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Bitcoin Section -->
-                <div class="group">
-                    <div class="relative rounded-[40px] overflow-hidden border border-amber-500/20 mb-8 interactive-glow shadow-2xl bg-zinc-950">
-                        <span class="img-label bg-amber-500 text-black">Asset: Bitcoin</span>
-                        <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&q=80&w=800" alt="Hình ảnh Bitcoin chuyên nghiệp" class="w-full h-72 object-cover opacity-70 group-hover:scale-110 transition-transform duration-700">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-zinc-900/50 rounded-3xl border border-white/5 interactive-glow">
+                    <h3 class="text-amber-500 font-bold mb-3 uppercase italic">Vàng rực sáng</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Niềm tin vào chính sách tiền tệ suy giảm đẩy Vàng lên mốc cao nhất từ 1979.</p>
+                </div>
+                <div class="p-6 bg-zinc-900/50 rounded-3xl border border-white/5 interactive-glow">
+                    <h3 class="text-blue-400 font-bold mb-3 uppercase italic">Bạc nén động cơ</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Sự thiếu hụt bạc công nghiệp cho AI & Năng lượng sạch tạo nên cú nổ kép.</p>
+                </div>
+                <div class="p-6 bg-zinc-900/50 rounded-3xl border border-white/5 interactive-glow">
+                    <h3 class="text-red-500 font-bold mb-3 uppercase italic">Bitcoin tách rời</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Không còn là trú ẩn, Bitcoin phản ứng thuần túy theo thanh khoản thị trường.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Assets Breakdown -->
+    <section class="py-32 px-4 reveal">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-20 italic uppercase tracking-tighter">1 Thị trường - 3 Phản ứng</h2>
+            
+            <div class="space-y-24">
+                <!-- Vàng Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="relative rounded-[40px] overflow-hidden border border-white/10 interactive-glow">
+                        <span class="img-label">Status: Anchor</span>
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Vàng mỏ neo" class="w-full h-80 object-cover opacity-70">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6">
-                            <h4 class="text-3xl font-black uppercase text-amber-500 italic tracking-widest">Bitcoin (BTC)</h4>
-                            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Status: Digital Gold / Safe Haven</p>
-                        </div>
                     </div>
-                    <div class="px-4">
-                        <p class="text-gray-400 text-sm leading-relaxed italic mb-6">
-                            "Bitcoin không còn là tài sản đầu cơ thuần túy. Nó đã trở thành **tấm khiên bảo vệ vốn** của kỷ nguyên số. Trong bối cảnh xung đột tài nguyên và nợ công Mỹ leo thang, BTC là tài sản hiếm hoi không lệ thuộc vào bất kỳ quốc gia nào."
+                    <div>
+                        <h3 class="text-3xl font-black text-amber-500 mb-6 uppercase italic">VÀNG: Mỏ Neo Lòng Tin</h3>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-medium">
+                            Vàng là thước đo rủi ro hệ thống. Chừng nào lợi suất thực còn giảm và ngân hàng trung ương các nước còn mua vào, Vàng vẫn giữ vị trí dẫn dắt. Đây là tài sản cho sự **phòng thủ điềm tĩnh** trước bất ổn vĩ mô.
                         </p>
-                        <div class="flex items-center gap-2 text-green-500 text-[10px] font-black uppercase mono">
-                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Strong Defense Asset
+                        <ul class="space-y-3 text-xs text-gray-500 font-bold italic">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-500" size="14"></i> Phản ứng trực tiếp với lãi suất thực.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-500" size="14"></i> Nơi trú ẩn cuối cùng khi USD xói mòn.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bạc Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+                    <div class="relative rounded-[40px] overflow-hidden border border-white/10 interactive-glow order-last md:order-none">
+                        <span class="img-label">Status: Engine</span>
+                        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80&w=800" alt="Bạc công nghiệp" class="w-full h-80 object-cover opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-black text-blue-400 mb-6 uppercase italic text-right md:text-left">BẠC: Động Cơ Khuếch Đại</h3>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-medium text-right md:text-left">
+                            Bạc là phiên bản "gắn thêm động cơ" của Vàng. Vừa hưởng lợi từ trú ẩn, vừa gánh thêm câu chuyện **thiếu hụt cung công nghiệp**. Bạc phóng theo vàng nhưng nhanh hơn, mạnh hơn và cũng rung lắc khốc liệt hơn.
+                        </p>
+                        <div class="flex justify-end md:justify-start gap-4">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-black rounded-full border border-blue-500/20 uppercase tracking-widest italic">AI Need Silver</span>
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-black rounded-full border border-blue-500/20 uppercase tracking-widest italic">Energy Transition</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Altcoin Section -->
-                <div class="group">
-                    <div class="relative rounded-[40px] overflow-hidden border border-red-500/20 mb-8 interactive-glow shadow-2xl bg-zinc-950">
-                        <span class="img-label bg-red-500 text-white">Asset: Altcoins</span>
-                        <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=800" alt="Hình ảnh Altcoins chuyên nghiệp" class="w-full h-72 object-cover opacity-70 group-hover:scale-110 transition-transform duration-700">
+                <!-- Bitcoin Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="relative rounded-[40px] overflow-hidden border border-white/10 interactive-glow">
+                        <span class="img-label">Status: Liquidity</span>
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800" alt="Bitcoin thanh khoản" class="w-full h-80 object-cover opacity-70">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6">
-                            <h4 class="text-3xl font-black uppercase text-red-500 italic tracking-widest">Altcoins</h4>
-                            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Status: Liquidity Trap / High Risk</p>
-                        </div>
                     </div>
-                    <div class="px-4">
-                        <p class="text-gray-400 text-sm leading-relaxed italic mb-6">
-                            "Altcoin chạy được hay không phụ thuộc 100% vào **thanh khoản từ Mỹ và Trung Quốc**. Khi dòng tiền bị siết để phục vụ các mục tiêu địa chính trị, Altcoin rác sẽ bị 'rút máu' nhanh chóng. Chỉ 5% dự án có ứng dụng thật mới có thể đứng vững."
+                    <div>
+                        <h3 class="text-3xl font-black text-red-500 mb-6 uppercase italic">BITCOIN: Hàn Thử Biểu</h3>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-medium">
+                            Bitcoin đã rời khỏi nhóm phòng thủ. Nó không cạnh tranh với Vàng, nó cạnh tranh với **Thanh khoản**. BTC nhạy với dòng tiền rẻ hơn là rủi ro chính trị. Khi thanh khoản co lại, Bitcoin sẽ trượt dù Vàng có thăng hoa.
                         </p>
-                        <div class="flex items-center gap-2 text-red-500 text-[10px] font-black uppercase mono">
-                            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Liquidity Risk: Critical
+                        <div class="p-5 bg-red-500/5 border border-red-500/20 rounded-2xl italic text-xs text-gray-500">
+                            "Bitcoin phản ứng với nỗi lo USD xói mòn nợ công, nhưng sống nhờ dòng stablecoin & lực đỡ từ các tổ chức Spot ETF."
                         </div>
                     </div>
                 </div>
@@ -316,71 +236,144 @@
         </div>
     </section>
 
-    <!-- Registration & Support -->
-    <section id="register" class="py-32 px-4 reveal relative">
-        <div class="absolute inset-0 bg-amber-500/5 -z-10 pointer-events-none blur-3xl rounded-full max-w-lg mx-auto h-96"></div>
+    <!-- Geopolitical & Resource Drivers -->
+    <section class="py-32 px-4 reveal bg-zinc-950/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-16 uppercase italic section-title">Thế Trận Địa Chính Trị 2026</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="p-8 bg-zinc-900/50 rounded-3xl border border-white/5 interactive-glow">
+                        <h3 class="text-amber-500 font-black text-sm uppercase mb-4 tracking-widest italic flex items-center gap-2">
+                            <i data-lucide="globe"></i> Trục Mỹ - Trung
+                        </h3>
+                        <p class="text-xs text-gray-400 leading-relaxed font-medium">
+                            Mỹ nỗ lực giữ trung tâm tài chính qua USD. Trung Quốc tách rời qua Vàng & Bạc. **Cuộc gặp tháng 4/2026 tại Bắc Kinh** là cột mốc quyết định hướng đi dòng tiền cả năm.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-zinc-900/50 rounded-3xl border border-white/5 interactive-glow">
+                        <h3 class="text-blue-400 font-black text-sm uppercase mb-4 tracking-widest italic flex items-center gap-2">
+                            <i data-lucide="zap"></i> Xung đột Tài nguyên
+                        </h3>
+                        <p class="text-xs text-gray-400 leading-relaxed font-medium">
+                            Nam Mỹ & Trung Đông: Nơi Mỹ siết chặt kiểm soát Lithium, Dầu, Bạc để ngăn sự trỗi dậy của công nghiệp Trung Quốc. Tài nguyên giờ đây là **Vũ khí chiến lược**.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-8 bg-zinc-900/50 rounded-3xl border border-white/5 interactive-glow flex flex-col justify-center">
+                    <h3 class="text-red-500 font-black text-sm uppercase mb-6 tracking-widest italic flex items-center gap-2">
+                        <i data-lucide="alert-triangle"></i> Rủi ro nội bộ Hoa Kỳ
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-red-500/5 border-l-2 border-red-500">
+                            <h4 class="text-[11px] font-black text-white uppercase mb-1 italic tracking-widest">Bong bóng AI</h4>
+                            <p class="text-[10px] text-gray-500 leading-relaxed font-medium">Vốn đổ vào quá nhanh nhưng lợi nhuận thực tế vẫn mơ hồ. Áp lực nổ bong bóng tài sản công nghệ.</p>
+                        </div>
+                        <div class="p-4 bg-red-500/5 border-l-2 border-red-500">
+                            <h4 class="text-[11px] font-black text-white uppercase mb-1 italic tracking-widest">Nợ công kỷ lục</h4>
+                            <p class="text-[10px] text-gray-500 leading-relaxed font-medium">Niềm tin USD xói mòn, thúc đẩy dòng tiền dịch chuyển sang Vàng và Bitcoin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Roadmap -->
+    <section class="py-32 px-4 reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-16 italic uppercase tracking-widest">Lộ Trình Chiến Lược</h2>
+            <div class="relative pl-8 border-l-2 border-amber-500/20 space-y-16">
+                <!-- Phase 1 -->
+                <div class="relative p-6 bg-zinc-900/30 rounded-3xl interactive-glow cursor-pointer" onclick="createRipple(event)">
+                    <div class="absolute -left-[41px] top-6 w-5 h-5 rounded-full bg-amber-500 border-4 border-black shadow-[0_0_15px_rgba(251,191,36,0.5)]"></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-[10px] mono bg-amber-500 text-black px-2 py-0.5 font-black uppercase tracking-widest">Trước Tháng 4</span>
+                        <h3 class="font-black text-amber-500 text-sm uppercase italic">GĐ 1: Phòng Thủ Tuyệt Đối</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed font-medium italic">
+                        Thị trường nín thở chờ tin Bắc Kinh. Ưu tiên sống sót, giữ vốn và nắm giữ các tài sản có nhịp giữ tốt như Vàng & BTC. Tuyệt đối không cược lớn Altcoin rác.
+                    </p>
+                </div>
+                <!-- Phase 2 -->
+                <div class="relative p-6 bg-zinc-900/30 rounded-3xl interactive-glow cursor-pointer" onclick="createRipple(event)">
+                    <div class="absolute -left-[41px] top-6 w-5 h-5 rounded-full bg-blue-500 border-4 border-black shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-[10px] mono bg-blue-500 text-white px-2 py-0.5 font-black uppercase tracking-widest">Sau Tháng 4</span>
+                        <h3 class="font-black text-blue-500 text-sm uppercase italic">GĐ 2: Bước Ngoặt Bản Lề</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed font-medium italic">
+                        Ngã rẽ sau hội nghị. Một hướng mở khóa thanh khoản cho Altcoin mạnh, một hướng đẩy thế giới vào phân hóa cực độ nơi chỉ Vàng & BTC bứt phá.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advice Card -->
+    <section class="py-24 px-4 reveal bg-zinc-950/80">
+        <div class="max-w-2xl mx-auto p-10 card-glass rounded-[40px] border-amber-500/20 text-center">
+            <h2 class="text-2xl font-black mb-6 uppercase italic text-amber-500">Lời khuyên cho Nhà đầu tư nhỏ lẻ</h2>
+            <p class="text-sm text-gray-400 leading-relaxed mb-8 italic">
+                "2026 không phải năm kiếm tiền nhanh. Đây là năm giữ tiền cho tốt. Sống sót qua tháng 4 đã là một chiến thắng lớn."
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                    <h4 class="text-[10px] font-black text-gray-500 uppercase mb-2">Nếu bạn là Pro</h4>
+                    <p class="text-[11px] text-gray-400">Được phép linh hoạt, nhưng phải tỉnh táo. Cắt lỗ ngay khi sai nhịp thanh khoản.</p>
+                </div>
+                <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                    <h4 class="text-[10px] font-black text-gray-500 uppercase mb-2">Nếu bạn là Newbie</h4>
+                    <p class="text-[11px] text-gray-400">Đứng ngoài Altcoin. Tập trung quan sát, giữ Cash và bảo vệ tài khoản đến sau tháng 4.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA & Registration -->
+    <section id="register" class="py-32 px-4 reveal">
         <div class="max-w-xl mx-auto">
             <div class="p-10 bg-black/90 rounded-[50px] border-2 border-dashed border-amber-500/30 text-center relative overflow-hidden interactive-glow shadow-2xl">
-                <div class="absolute -top-10 -right-10 opacity-5">
-                    <i data-lucide="shield-check" size="200"></i>
-                </div>
-                
-                <h2 class="text-4xl font-black mb-8 uppercase italic tracking-tighter">Truy cập Alpha Data</h2>
+                <h2 class="text-4xl font-black mb-8 uppercase italic tracking-tighter">Nhận Bản Đồ Alpha</h2>
                 <p class="text-gray-400 text-sm mb-12 italic leading-relaxed px-6 font-medium">
-                    Để nhận bản PDF đầy đủ chiến lược và link tham gia buổi giải đáp danh mục 2026, học viên vui lòng điền thông tin bên dưới.
+                    Nhận ngay bản báo cáo PDF chiến lược phân bổ Vàng - Bạc - Bitcoin và link tham gia cộng đồng giải đáp trực tiếp từ ARC.
                 </p>
                 
                 <form class="space-y-4 text-left mb-12" onsubmit="event.preventDefault(); document.getElementById('success').classList.remove('hidden');">
-                    <div class="relative group">
-                        <input type="text" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-amber-500 text-sm font-bold uppercase tracking-widest placeholder:text-gray-700 transition-all focus:bg-zinc-900/50" placeholder="Tên học viên" required>
+                    <div class="relative">
+                        <i data-lucide="user" class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-600" size="18"></i>
+                        <input type="text" class="w-full bg-white/5 border border-white/10 rounded-2xl px-14 py-5 outline-none focus:border-amber-500 text-sm font-bold uppercase tracking-widest transition-all" placeholder="Tên học viên" required>
                     </div>
-                    <div class="relative group">
-                        <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-amber-500 text-sm font-bold uppercase tracking-widest placeholder:text-gray-700 transition-all focus:bg-zinc-900/50" placeholder="Zalo nhận tài liệu" required>
+                    <div class="relative">
+                        <i data-lucide="phone" class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-600" size="18"></i>
+                        <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-2xl px-14 py-5 outline-none focus:border-amber-500 text-sm font-bold uppercase tracking-widest transition-all" placeholder="Zalo nhận link" required>
                     </div>
-                    <button type="submit" class="btn-premium w-full py-6 text-black font-black uppercase tracking-[0.3em] text-sm rounded-3xl shadow-2xl transition-all active:scale-95">
-                        XÁC NHẬN NHẬN BÁO CÁO
+                    <button type="submit" class="btn-premium w-full py-6 text-black font-black uppercase tracking-[0.3em] text-sm rounded-3xl shadow-2xl transition-all">
+                        NHẬN ALPHA REPORT
                     </button>
-                    <p id="success" class="hidden text-center text-green-500 text-[11px] font-black uppercase animate-pulse mt-4">✓ Kết nối thành công. Trợ lý ARC sẽ gửi tin nhắn cho bạn ngay.</p>
+                    <p id="success" class="hidden text-center text-green-500 text-[11px] font-black uppercase animate-pulse mt-4 italic">✓ Đăng ký thành công! Kiểm tra Zalo ngay.</p>
                 </form>
 
-                <!-- Contact & Social Grid -->
-                <div class="space-y-8 text-left">
-                    <div class="grid grid-cols-1 gap-4">
-                        <a href="https://zalo.me/0862611626" target="_blank" class="flex items-center justify-between p-6 bg-zinc-950 rounded-3xl interactive-glow border border-white/5 shadow-lg" onclick="createRipple(event)">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center font-black italic text-sm text-white shadow-xl shadow-blue-500/20">Z</div>
-                                <div>
-                                    <p class="text-[10px] mono text-gray-500 uppercase font-extrabold">Support Zalo</p>
-                                    <p class="text-sm font-bold tracking-widest text-white">0862.611.626</p>
-                                </div>
+                <!-- Support & Social -->
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="https://zalo.me/0862611626" target="_blank" class="flex items-center gap-3 p-4 bg-zinc-950 rounded-2xl interactive-glow border border-white/5">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-black italic text-sm text-white">Z</div>
+                            <div class="text-left">
+                                <p class="text-[9px] text-gray-500 uppercase font-extrabold">Zalo</p>
+                                <p class="text-[11px] font-bold text-white">0862.611.626</p>
                             </div>
-                            <i data-lucide="chevron-right" class="text-amber-500"></i>
                         </a>
-                        <a href="https://t.me/HotroARC" target="_blank" class="flex items-center justify-between p-6 bg-zinc-950 rounded-3xl interactive-glow border border-white/5 shadow-lg" onclick="createRipple(event)">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white shadow-xl shadow-blue-400/20"><i data-lucide="send" size="22"></i></div>
-                                <div>
-                                    <p class="text-[10px] mono text-gray-500 uppercase font-extrabold">Telegram Alpha</p>
-                                    <p class="text-sm font-bold tracking-widest text-white">@HotroARC</p>
-                                </div>
+                        <a href="https://t.me/HotroARC" target="_blank" class="flex items-center gap-3 p-4 bg-zinc-950 rounded-2xl interactive-glow border border-white/5">
+                            <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white"><i data-lucide="send" size="18"></i></div>
+                            <div class="text-left">
+                                <p class="text-[9px] text-gray-500 uppercase font-extrabold">Telegram</p>
+                                <p class="text-[11px] font-bold text-white">@HotroARC</p>
                             </div>
-                            <i data-lucide="chevron-right" class="text-blue-500"></i>
                         </a>
                     </div>
-
-                    <!-- Social Media Links -->
-                    <div class="flex flex-col gap-4">
-                        <p class="text-[10px] mono text-gray-500 uppercase font-extrabold tracking-widest text-center">Theo dõi cộng đồng ARC</p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="https://www.facebook.com/profile.php?id=61582741899757" target="_blank" class="flex flex-col items-center justify-center p-6 bg-zinc-950 rounded-3xl interactive-glow border border-white/5">
-                                <i data-lucide="facebook" class="text-blue-500 mb-2"></i>
-                                <span class="text-[10px] font-bold uppercase tracking-widest">Facebook</span>
-                            </a>
-                            <a href="https://www.youtube.com/@anhreviewcapital" target="_blank" class="flex flex-col items-center justify-center p-6 bg-zinc-950 rounded-3xl interactive-glow border border-white/5">
-                                <i data-lucide="youtube" class="text-red-500 mb-2"></i>
-                                <span class="text-[10px] font-bold uppercase tracking-widest">YouTube</span>
-                            </a>
-                        </div>
+                    <div class="flex justify-center gap-6">
+                        <a href="https://www.facebook.com/profile.php?id=61582741899757" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 transition-all"><i data-lucide="facebook" size="20"></i></a>
+                        <a href="https://www.youtube.com/@anhreviewcapital" target="_blank" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-600 transition-all"><i data-lucide="youtube" size="20"></i></a>
                     </div>
                 </div>
             </div>
@@ -390,19 +383,19 @@
     <!-- Footer -->
     <footer class="py-24 text-center border-t border-white/5 bg-black/80 px-4">
         <div class="flex justify-center mb-10">
-            <div class="w-16 h-16 rounded-full border border-white/10 p-1 bg-black/50 shadow-2xl">
-                <img src="logo_arc.jpg" alt="Logo ARC Footer" class="w-full h-full object-cover rounded-full grayscale opacity-40 hover:opacity-100 transition-all duration-500" onerror="this.src='https://ui-avatars.com/api/?name=ARC&background=000&color=fff'">
+            <div class="w-16 h-16 rounded-full border border-white/10 p-1 bg-black/50">
+                <img src="logo_arc.jpg" alt="Logo Footer" class="w-full h-full object-cover rounded-full grayscale opacity-40 hover:opacity-100 transition-all duration-500" onerror="this.src='https://ui-avatars.com/api/?name=ARC&background=000&color=fff'">
             </div>
         </div>
-        <p class="text-[11px] mono text-gray-500 uppercase tracking-[0.6em] mb-6 italic font-extrabold">Vision • Power • Success</p>
-        <div class="max-w-md mx-auto text-gray-700">
+        <p class="text-[11px] mono text-gray-500 uppercase tracking-[0.7em] mb-6 italic font-extrabold">Vision • Power • Success</p>
+        <div class="max-w-md mx-auto text-gray-700 italic">
             <p class="text-[9px] leading-relaxed uppercase font-bold tracking-wider">
-                ANHREVIEW CAPITAL © 2026. <br>Học viện vĩ mô ARC - Tầm nhìn trung lập & khách quan. <br>Cảnh báo: Đầu tư tài chính là rủi ro. ARC không chịu trách nhiệm cho các quyết định cá nhân.
+                ANHREVIEW CAPITAL © 2026. <br>Học viện vĩ mô ARC - Tầm nhìn trung lập & khách quan. <br>Cảnh báo: Đầu tư tài chính là rủi ro khốc liệt. ARC không chịu trách nhiệm cho các quyết định cá nhân.
             </p>
         </div>
     </footer>
 
-    <!-- Mobile Navigation -->
+    <!-- Mobile Nav -->
     <div class="fixed bottom-0 w-full p-4 bg-gradient-to-t from-black to-transparent z-[60] md:hidden">
         <a href="#register" class="btn-premium flex items-center justify-center w-full py-5 text-black font-black rounded-2xl uppercase tracking-[0.2em] text-[11px] shadow-3xl">
             TẢI CHIẾN LƯỢC 2026
@@ -419,12 +412,10 @@
             const diameter = Math.max(button.clientWidth, button.clientHeight);
             const radius = diameter / 2;
             const rect = button.getBoundingClientRect();
-            
             circle.style.width = circle.style.height = `${diameter}px`;
             circle.style.left = `${event.clientX - rect.left - radius}px`;
             circle.style.top = `${event.clientY - rect.top - radius}px`;
             circle.classList.add("ripple");
-
             const ripple = button.getElementsByClassName("ripple")[0];
             if (ripple) ripple.remove();
             button.appendChild(circle);
@@ -433,40 +424,10 @@
         // Reveal Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    const counters = entry.target.querySelectorAll('[data-target]');
-                    counters.forEach(counter => animateCounter(counter));
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Counter Logic
-        function animateCounter(el) {
-            if (el.classList.contains('counted')) return;
-            const targetStr = el.getAttribute('data-target');
-            const target = parseFloat(targetStr);
-            let startTime = performance.now();
-            const duration = 2500;
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeOutExpo = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-                const currentVal = easeOutExpo(progress) * target;
-
-                if (el.innerText.includes('-')) {
-                    el.innerText = `-${Math.floor(currentVal)}%`;
-                } else {
-                    el.innerText = Math.floor(currentVal);
-                }
-
-                if (progress < 1) requestAnimationFrame(update);
-                else el.classList.add('counted');
-            }
-            requestAnimationFrame(update);
-        }
     </script>
 </body>
 </html>
